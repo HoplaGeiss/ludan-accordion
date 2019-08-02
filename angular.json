@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "ngx-ludan-accordion": {
+      "projectType": "library",
+      "root": "projects/ngx-ludan-accordion",
+      "sourceRoot": "projects/ngx-ludan-accordion/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-ludan-accordion/tsconfig.lib.json",
+            "project": "projects/ngx-ludan-accordion/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-ludan-accordion/src/test.ts",
+            "tsConfig": "projects/ngx-ludan-accordion/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-ludan-accordion/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-ludan-accordion/tsconfig.lib.json",
+              "projects/ngx-ludan-accordion/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ludan-accordion"
 }

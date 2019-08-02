@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-ludan-accordion": [
+        "dist/ngx-ludan-accordion"
+      ],
+      "ngx-ludan-accordion/*": [
+        "dist/ngx-ludan-accordion/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
