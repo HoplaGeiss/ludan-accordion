@@ -5,7 +5,10 @@ import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
   selector: 'ludan-accordion-group',
   styleUrls: ['./accordion-group.component.scss'],
   template: `
-    <div class="accordion-group" [ngClass]="{ closed: !isOpen }">
+    <div
+      class="accordion-group"
+      [ngClass]="{ closed: !isOpen, first: index === 0 }"
+    >
       <div class="panel-heading" (click)="toggleOpen()">
         <ng-content select=".header"></ng-content>
       </div>

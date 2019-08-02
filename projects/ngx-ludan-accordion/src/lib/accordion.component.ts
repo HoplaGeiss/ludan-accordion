@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ludan-accordion',
+  styleUrls: ['accordion.component.scss'],
   template: `
     <div class="accordion">
       <ng-content></ng-content>

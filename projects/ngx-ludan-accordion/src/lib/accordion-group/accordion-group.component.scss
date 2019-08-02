@@ -1,5 +1,12 @@
 .accordion-group {
-  position: relative;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
+  &:not(.first) {
+    .panel-heading {
+      border-top: 1px solid #e8e8e8;
+    }
+  }
 
   &.closed {
     .panel-collapse {
@@ -7,16 +14,27 @@
     }
   }
 
+  &:not(.closed) {
+    .panel-heading {
+      border-bottom: 1px solid #e8e8e8;
+    }
+  }
+
   .panel-heading {
     cursor: pointer;
+    background-color: #e3875a;
+    padding: 5px;
+    color: white;
   }
 
   .panel-collapse {
     transition-property: all;
     transition: 0.5s ease;
-
     overflow-y: hidden;
     max-height: 1000px;
-    padding-left: 20px;
+
+    .panel-body {
+      padding: 5px;
+    }
   }
 }
