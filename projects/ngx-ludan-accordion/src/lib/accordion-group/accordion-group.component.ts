@@ -1,5 +1,6 @@
+import { Component, Input } from '@angular/core';
+
 import { AccordionComponent } from '../accordion.component';
-import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
 
 @Component({
   selector: 'ludan-accordion-group',
@@ -20,8 +21,7 @@ import { Component, Input, OnChanges, SimpleChange } from '@angular/core';
     </div>
   `
 })
-export class AccordionGroupComponent implements OnChanges {
-  @Input() heading: string;
+export class AccordionGroupComponent {
   @Input() isOpen: boolean;
   @Input() index: number;
 
@@ -29,22 +29,12 @@ export class AccordionGroupComponent implements OnChanges {
     this.accordion.addGroup(this);
   }
 
-  ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
-    for (const propName in changes) {
-      if (changes.hasOwnProperty(propName)) {
-        const changedProp = changes[propName];
-
-        if (!changedProp.isFirstChange()) {
-          this.accordion.groups[this.index + 1].toggleOpen();
-        }
-      }
-    }
-  }
-
   toggleOpen(): void {
     if (!this.isOpen) {
       this.isOpen = true;
       this.accordion.closeOthers(this);
+    } else {
+      this.isOpen = false;
     }
   }
 }

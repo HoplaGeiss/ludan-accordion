@@ -24,11 +24,4 @@ export class AccordionComponent {
       }
     });
   }
-
-  removeGroup(group: AccordionGroupComponent): void {
-    const index = this.groups.indexOf(group);
-    if (index !== -1) {
-      this.groups.splice(index, 1);
-    }
-  }
 }

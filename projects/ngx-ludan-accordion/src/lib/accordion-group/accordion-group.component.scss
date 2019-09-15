@@ -29,9 +29,9 @@
 
   .panel-collapse {
     transition-property: all;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
     overflow-y: hidden;
-    max-height: 1000px;
+    max-height: 400px;
 
     .panel-body {
       padding: 5px;
